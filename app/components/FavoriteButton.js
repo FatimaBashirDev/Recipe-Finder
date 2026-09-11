@@ -29,7 +29,7 @@ function favoriteButtonClass(saved) {
   return [
     "inline-flex items-center rounded-full border px-4 py-2 shadow-sm transition",
     saved
-      ? "border-amber-400 bg-amber-400 text-zinc-950"
-      : "border-zinc-300 bg-white text-zinc-700 hover:border-amber-400 hover:text-amber-600 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-200 dark:hover:text-amber-300",
+      ? "border-amber-400 bg-amber-400 text-neutral-canvas-dark"
+      : "border-neutral-border-strong bg-white text-neutral-foreground-strong hover:border-amber-400 hover:text-amber-600 dark:border-neutral-foreground-strong dark:bg-neutral-canvas-dark dark:text-neutral-border dark:hover:text-amber-300",
   ].join(" ");
 }

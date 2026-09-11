@@ -3,8 +3,10 @@ import MealCard from "./MealCard";
 export default function MealGrid({ meals, emptyMessage }) {
   if (!meals.length) {
     return (
-      <div className="rounded-2xl border border-dashed border-zinc-300 p-10 text-center dark:border-zinc-700">
-        <p className="text-zinc-600 dark:text-zinc-300">{emptyMessage}</p>
+      <div className="rounded-2xl border border-dashed border-neutral-border-strong p-10 text-center dark:border-neutral-border-muted">
+        <p className="text-neutral-foreground-muted dark:text-neutral-foreground-dark">
+          {emptyMessage}
+        </p>
       </div>
     );
   }

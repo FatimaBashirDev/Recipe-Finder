@@ -1,3 +1,5 @@
+"use client";
+
 export default function SearchBar({ value, onChange, onSearch, isSearching }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -14,7 +16,7 @@ export default function SearchBar({ value, onChange, onSearch, isSearching }) {
     <form className="w-full" onSubmit={handleSubmit}>
       <label
         htmlFor="meal-search"
-        className="mb-2 block text-sm font-semibold text-zinc-700 dark:text-zinc-200"
+        className="mb-2 block text-sm font-semibold text-neutral-foreground-strong dark:text-neutral-border-strong"
       >
         Search by meal name
       </label>
@@ -26,12 +28,12 @@ export default function SearchBar({ value, onChange, onSearch, isSearching }) {
           onChange={(event) => onChange(event.target.value)}
           placeholder="Try chicken, pasta, or cake"
           disabled={isSearching}
-          className="min-h-12 flex-1 rounded-xl border border-zinc-300 bg-white px-4 text-zinc-900 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-white dark:focus:ring-emerald-900"
+          className="min-h-12 flex-1 rounded-xl border border-neutral-border-strong bg-neutral-canvas px-4 text-neutral-foreground placeholder:text-neutral-placeholder focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-soft dark:border-neutral-foreground-strong dark:bg-neutral-surface-dark dark:text-white dark:focus:ring-brand-ring-dark"
         />
         <button
           type="submit"
           disabled={isSearching || !value.trim()}
-          className="min-h-12 rounded-xl bg-emerald-600 px-6 font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60 dark:hover:bg-emerald-500"
+          className="min-h-12 rounded-xl bg-brand-primary px-6 font-semibold text-white transition hover:bg-brand-primary-hover disabled:cursor-not-allowed disabled:opacity-60 dark:hover:bg-brand-accent"
         >
           {isSearching ? "Searching..." : "Search"}
         </button>

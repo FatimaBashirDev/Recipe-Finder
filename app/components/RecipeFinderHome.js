@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import CategoryFilter from "./CategoryFilter";
 import MealGrid from "./MealGrid";
@@ -113,19 +115,19 @@ export default function RecipeFinderHome() {
   return (
     <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <section className="max-w-3xl">
-        <p className="font-semibold text-emerald-700 dark:text-emerald-400">
+        <p className="font-semibold text-brand-primary-hover dark:text-brand-light">
           Discover something delicious
         </p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
+        <h1 className="mt-2 text-4xl font-bold tracking-tight text-neutral-foreground dark:text-white sm:text-5xl">
           What are you craving today?
         </h1>
-        <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-300">
+        <p className="mt-4 text-lg leading-8 text-neutral-foreground-muted dark:text-neutral-foreground-dark">
           Search thousands of recipes or browse by category to find step-by-step
           meal inspiration.
         </p>
       </section>
 
-      <section className="mt-8 rounded-2xl bg-zinc-50 p-4 dark:bg-zinc-900 sm:p-6">
+      <section className="mt-8 rounded-2xl bg-neutral-surface p-4 dark:bg-neutral-surface-dark sm:p-6">
         <SearchBar
           value={searchInput}
           onChange={setSearchInput}
@@ -147,15 +149,15 @@ export default function RecipeFinderHome() {
       <section aria-labelledby="results-heading" className="mt-4">
         <div className="mb-5 flex items-end justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+            <p className="text-sm font-semibold text-brand-primary-hover dark:text-brand-light">
               {selectedCategory === "All" && !searchQuery ? "Search or browse" : "Recipes"}
             </p>
-            <h2 id="results-heading" className="mt-1 text-2xl font-bold text-zinc-900 dark:text-white">
+            <h2 id="results-heading" className="mt-1 text-2xl font-bold text-neutral-foreground dark:text-white">
               {resultHeading}
             </h2>
           </div>
           {hasSearched && !isLoading && !error && (
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            <p className="text-sm text-neutral-foreground-subtle dark:text-neutral-foreground-dark-muted">
               {meals.length} {meals.length === 1 ? "meal" : "meals"}
             </p>
           )}
@@ -190,12 +192,12 @@ function MealGridSkeleton() {
       {Array.from({ length: 8 }, (_, index) => (
         <div
           key={index}
-          className="overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900"
+          className="overflow-hidden rounded-2xl border border-neutral-border bg-white dark:border-neutral-border-dark dark:bg-neutral-surface-dark"
         >
-          <div className="aspect-[4/3] animate-pulse bg-zinc-200 dark:bg-zinc-800" />
+          <div className="aspect-[4/3] animate-pulse bg-neutral-border dark:bg-neutral-surface-darker" />
           <div className="space-y-3 p-4">
-            <div className="h-5 w-3/4 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
-            <div className="h-4 w-1/3 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+            <div className="h-5 w-3/4 animate-pulse rounded bg-neutral-border dark:bg-neutral-surface-darker" />
+            <div className="h-4 w-1/3 animate-pulse rounded bg-neutral-border dark:bg-neutral-surface-darker" />
           </div>
         </div>
       ))}

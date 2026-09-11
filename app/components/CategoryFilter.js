@@ -1,3 +1,5 @@
+"use client";
+
 export default function CategoryFilter({
   categories,
   selectedCategory,
@@ -10,12 +12,12 @@ export default function CategoryFilter({
       <div className="mb-3 flex items-center justify-between gap-4">
         <h2
           id="category-filter-heading"
-          className="text-sm font-semibold text-zinc-700 dark:text-zinc-200"
+          className="text-sm font-semibold text-neutral-foreground-strong dark:text-neutral-border-strong"
         >
           Browse categories
         </h2>
         {isLoading && (
-          <span className="text-sm text-zinc-500 dark:text-zinc-400">
+          <span className="text-sm text-neutral-foreground-subtle dark:text-neutral-foreground-dark-muted">
             Loading...
           </span>
         )}
@@ -60,8 +62,8 @@ function categoryButtonClass(isSelected) {
   return [
     "shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition",
     isSelected
-      ? "border-emerald-600 bg-emerald-600 text-white"
-      : "border-zinc-300 bg-white text-zinc-700 hover:border-emerald-500 hover:text-emerald-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:text-emerald-300",
+      ? "border-brand-primary bg-brand-primary text-white"
+      : "border-neutral-border-strong bg-neutral-canvas text-neutral-foreground-strong hover:border-brand-accent hover:text-brand-primary-hover dark:border-neutral-foreground-strong dark:bg-neutral-surface-dark dark:text-neutral-border-strong dark:hover:text-brand-lighter",
     "disabled:cursor-not-allowed disabled:opacity-60",
   ].join(" ");
 }
