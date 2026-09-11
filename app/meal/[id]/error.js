@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function MealError({ error, retry }) {
   useEffect(() => {
     console.error(error);

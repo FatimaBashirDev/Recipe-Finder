@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { useCallback, useEffect, useRef, useState } from "react";
 import CategoryFilter from "./CategoryFilter";
 import MealGrid from "./MealGrid";
